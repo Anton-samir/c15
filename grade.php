@@ -5,28 +5,28 @@ if ($_POST) {
     $c=$_POST['Num3'];
     $d=$_POST['Num4'];
     $e=$_POST['Num5'];
-    $per= ($a + $b + $c + $d + $e)/0.5;
-    $per1=($per / 500.0) * 100;
-    $message1=$per1;
- // if request is post
+    $per= ($a + $b + $c + $d + $e)/5.0;
     $color = "success";
-    if($per >= 90)
+    if($per <=50){
+        $per1=($per * 0.002) * 100;
+        $message1=$per;
+    if($per >= 50)
     {
         $message="Grade A";
     }
-    else if($per >= 80)
+    else if($per >= 40)
     {
         $message="Grade B";
     }
-    else if($per >= 70)
+    else if($per >= 30)
     {
         $message="Grade C";
     }
-    else if($per >= 60)
+    else if($per >= 20)
     {
         $message="Grade D";
     }
-    else if($per >= 40)
+    else if($per >= 10)
     {
         $message="Grade E";
     }
@@ -35,6 +35,10 @@ if ($_POST) {
         $message="Grade F";
     }
     }
+    else{
+         $message="Error";
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">

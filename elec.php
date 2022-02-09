@@ -31,6 +31,7 @@ if (isset($_POST['unit-submit'])) {
         $remaining_units = $units - 250;
         $bill = $temp + ($remaining_units * $unit_cost_fourth);
     }
+    $message=$bill + 0.2;
     }
 ?>
 <!doctype html>
@@ -62,7 +63,7 @@ if (isset($_POST['unit-submit'])) {
                 </form>
                 <?php 
                 if(isset($bill)){
-                    echo "<div class='alert alert-$color'> Your Bill Is:$bill </div>";
+                    echo "<div class='alert alert-$color'> Your Bill Is :$message </div>";
                 }
                 ?>
             </div>
